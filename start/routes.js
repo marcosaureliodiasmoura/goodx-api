@@ -16,3 +16,4 @@ Route.post('sessions', 'SessionController.store')
  * ForgotPassword
  */
 Route.post('forgot', 'ForgotPasswordController.store')
+Route.put('forgot', 'ForgotPasswordController.update')
