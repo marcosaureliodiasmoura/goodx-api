@@ -17,3 +17,12 @@ Route.post('sessions', 'SessionController.store')
  */
 Route.post('forgot', 'ForgotPasswordController.store')
 Route.put('forgot', 'ForgotPasswordController.update')
+
+/**
+ * Projects And Donations
+ */
+Route.group(() => {
+  Route.resource('projects', 'ProjectController').apiOnly()
+  Route.resource('projects.donations', 'DonationController').apiOnly()
+  Route.resource('donations', 'DonationController')
+}).middleware(['auth'])
