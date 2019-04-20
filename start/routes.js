@@ -5,7 +5,7 @@ const Route = use('Route')
 /**
  * Users
  */
-Route.post('users', 'UserController.store')
+Route.post('users', 'UserController.store').validator('User')
 
 /**
  * Sessions
