@@ -18,6 +18,11 @@ class User extends Model {
   tokens () {
     return this.hasMany('App/Models/Token')
   }
+
+  // Relacionamento entre usuário e endereço. Usuário possui apenas um único endereço.
+  addresses () {
+    return this.hasOne('App/Models/UserAddress')
+  }
 }
 
 module.exports = User
