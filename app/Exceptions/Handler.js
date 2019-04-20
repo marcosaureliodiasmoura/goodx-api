@@ -4,6 +4,9 @@ const BaseExceptionHandler = use('BaseExceptionHandler')
 const Env = use('Env')
 const Youch = use('youch')
 
+const Config = use('Config')
+const Sentry = use('@sentry/node')
+
 class ExceptionHandler extends BaseExceptionHandler {
   async handle (error, { request, response }) {
     if (error.name === 'ValidationException') {
@@ -16,7 +19,12 @@ class ExceptionHandler extends BaseExceptionHandler {
     }
     return response.status(error.status)
   }
-  // async report (error, { request }) {}
+  async report (error, { request }) {
+    Sentry.init({
+      dsn: Config.get('services.sentry.dsn')
+    })
+    Sentry.captureException(error)
+  }
 }
 
 module.exports = ExceptionHandler
