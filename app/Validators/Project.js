@@ -9,7 +9,7 @@ class Project {
     return {
       title: 'required',
       description: 'required',
-      amount_collected: 'required'
+      amountcollected: 'required'
     }
   }
 }

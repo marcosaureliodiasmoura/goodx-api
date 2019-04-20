@@ -6,7 +6,7 @@ class Donation {
   }
   get rules () {
     return {
-      amount_donate: 'required'
+      amountdonate: 'required'
     }
   }
 }

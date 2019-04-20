@@ -16,7 +16,7 @@ class ProjectSchema extends Schema {
         .onDelete('SET NULL')
       table.string('title').notNullable()
       table.text('description').notNullable()
-      table.decimal('amount_collected')
+      table.decimal('amountcollected')
       table.timestamps()
     })
   }

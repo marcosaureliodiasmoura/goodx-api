@@ -21,7 +21,7 @@ class DonationSchema extends Schema {
         .inTable('users')
         .onUpdate('CASCADE')
         .onDelete('SET NULL')
-      table.decimal('amount_donate')
+      table.decimal('amountdonate')
       table.timestamps()
     })
   }

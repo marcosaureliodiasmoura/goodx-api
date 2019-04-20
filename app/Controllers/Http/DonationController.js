@@ -9,7 +9,7 @@ class DonationController {
 
   async store ({ request, params, auth }) {
     // O id do projeto iremos pegar no parâmetro da url
-    const data = request.only(['amount_donate', 'project_id'])
+    const data = request.only(['amountdonate', 'project_id'])
 
     const donation = await Donation.create({
       ...data,
