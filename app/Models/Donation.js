@@ -6,10 +6,9 @@ class Donation extends Model {
   static boot () {
     super.boot()
     this.addHook('afterSave', 'DonationHook.sendNewDonationMail')
-    this.addHook('beforeUpdate', 'DonationHook.sendNewDonationMail')
   }
 
-  // eu posso doar várias vezes no mesmo projeto, entao, belongsToMany
+  // eu posso doar várias vezes no mesmo projeto, porém, uma doação por projeto por vez.
   project () {
     return this.belongsTo('App/Models/Project')
   }
