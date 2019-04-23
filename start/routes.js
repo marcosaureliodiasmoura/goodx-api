@@ -30,6 +30,8 @@ Route.group(() => {
     .apiOnly()
     .validator(new Map([[['projects.store'], ['Project']]]))
 
+  Route.post('projects/:id/images', 'ImageProjectController.store')
+
   Route.resource('projects.donations', 'DonationController')
     .apiOnly()
     .validator(new Map([[['projects.donations.store'], ['Donation']]]))

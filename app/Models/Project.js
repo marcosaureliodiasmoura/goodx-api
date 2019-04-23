@@ -13,6 +13,11 @@ class Project extends Model {
   donations () {
     return this.hasMany('App/Models/Donation')
   }
+
+  // Um projeto possui muitas imagens
+  images () {
+    return this.hasMany('App/Models/Image')
+  }
 }
 
 module.exports = Project

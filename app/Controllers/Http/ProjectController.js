@@ -26,6 +26,7 @@ class ProjectController {
 
     await project.load('user')
     await project.load('donations')
+    await project.load('images')
 
     return project
   }
