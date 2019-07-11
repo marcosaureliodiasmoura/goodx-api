@@ -3,6 +3,11 @@
 const Database = use('Database')
 const User = use('App/Models/User')
 class UserController {
+  async index ({ request }) {
+    const users = await User.all()
+    return users
+  }
+
   async store ({ request }) {
     const data = request.only(['name', 'surname', 'email', 'password'])
     const addresses = request.input('addresses')

@@ -6,11 +6,13 @@ const Route = use('Route')
  * Users
  */
 Route.post('users', 'UserController.store').validator('User')
+Route.get('users', 'UserController.index')
 
 /**
  * Sessions
  */
 Route.post('sessions', 'SessionController.store').validator('Session')
+// Route.post('sessions', 'SessionController.store')
 
 /**
  * ForgotPassword
@@ -37,4 +39,5 @@ Route.group(() => {
     .validator(new Map([[['projects.donations.store'], ['Donation']]]))
 
   Route.resource('donations', 'DonationController').apiOnly()
-}).middleware(['auth'])
+})
+// }).middleware(['auth'])
